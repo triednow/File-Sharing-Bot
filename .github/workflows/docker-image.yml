@@ -17,7 +17,7 @@ jobs:
     - name: Build the Docker image 
       run: docker build  .  -t file
     - name: login
-      run: docker login -u admin44449999 -p Aaryan$$$$
+      run: docker login --username admin44449999 --password Aaryan$$$$
     - name: tag
       run: docker tag file admin44449999/file
     - name: push image
