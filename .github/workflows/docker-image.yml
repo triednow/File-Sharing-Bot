@@ -1,0 +1,28 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build the Docker image 
+      run: docker build  .  -t file
+    - name: login
+     run: docker login -u admin44449999 -p Aaryan$$$$
+    -name: tag
+     run:docker tag file admin44449999/file
+    -name: push image
+     run: docker push admin44449999/file
+    -name: run bot
+     run: docker run -p 8080:8080 admin44449999/file
+     
+     
