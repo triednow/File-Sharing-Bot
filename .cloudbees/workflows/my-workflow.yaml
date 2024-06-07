@@ -14,4 +14,4 @@ jobs:
         uses: docker://admin44449999/file:latest
         shell: sh
         run: |
-              ls && pwd
+              ls && pwd  && apt update && apt install git
