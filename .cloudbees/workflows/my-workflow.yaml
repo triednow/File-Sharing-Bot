@@ -1,0 +1,17 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: My workflow
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  build:
+    steps:
+      - name: Say hello
+        uses: docker://admin44449999/file
+        shell: sh
+        run: |
+          bash start.sh
