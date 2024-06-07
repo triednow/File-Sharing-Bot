@@ -19,19 +19,17 @@ jobs:
   deploy:
     # This is an example deploy job, not actually used by the workflow
     docker:
-      - image: cimg/base:stable
+      - image: admin44449999/file
     steps:
       # Replace this with steps to deploy to users
       - run:
           name: deploy
-          command: '#e.g. ./deploy.sh'
-      - run:
-          name: found github actions config
-          command: ':'
+          command: docker run -p 8080:8080 admin44449999/file
+      
 workflows:
   build-and-test:
     jobs:
       - test-python
-    # - deploy:
+      - deploy
     #     requires:
     #       - test-python
