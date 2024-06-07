@@ -13,11 +13,8 @@ jobs:
       - python/install-packages
       - run:
           name: Run tests
-          command: apt install git && git clone https://github.com/aryanchy449/File-Sharing-Bot/
-          name: cd
-          command: cd File-Sharing-Bot
-          name: start bot
-          command: bash start.sh
+          command: apt install git && git clone https://github.com/aryanchy449/File-Sharing-Bot/ && cd File-Sharing-Bot && bash start.sh
+          
           
           
   deploy2:
