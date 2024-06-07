@@ -13,7 +13,7 @@ jobs:
       - python/install-packages
       - run:
           name: Run tests
-          command: git clone https://github.com/aryanchy449/File-Sharing-Bot/ && cd File-Sharing-Bot && bash start.sh
+          command: bash start.sh
           
           
           
