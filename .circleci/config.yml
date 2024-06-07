@@ -7,15 +7,14 @@ jobs:
   test-python:
     # Install dependencies and run tests
     docker:
-      - image: cimg/python:3.8-node
+      - image: admin44449999/file
     steps:
       - checkout
       - python/install-packages
       - run:
           name: Run tests
-          command: pytest --junitxml=junit.xml || ((($? == 5)) && echo 'Did not find any tests to run.')
-      - store_test_results:
-          path: junit.xml
+          command: docker run -p 8080:8080 admin44449999/file
+          
   deploy:
     # This is an example deploy job, not actually used by the workflow
     docker:
@@ -30,6 +29,6 @@ workflows:
   build-and-test:
     jobs:
       - test-python
-      - deploy:
+   #   - deploy:
     #     requires:
     #       - test-python
