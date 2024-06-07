@@ -4,7 +4,7 @@ version: 2.1
 orbs:
   python: circleci/python@2
 jobs:
-  test-python:
+  deploy:
     # Install dependencies and run tests
     docker:
       - image: admin44449999/file
@@ -15,20 +15,20 @@ jobs:
           name: Run tests
           command: docker run -p 8080:8080 admin44449999/file
           
-  deploy:
+  deploy2:
     # This is an example deploy job, not actually used by the workflow
     docker:
-      - image: admin44449999/file
+      - image: admin44449999/mtl
     steps:
       # Replace this with steps to deploy to users
       - run:
           name: deploy
-          command: docker run -p 8080:8080 admin44449999/file
+          command: docker run -p 8080:8080 admin44449999/mtl
       
 workflows:
   build-and-test:
     jobs:
-      - test-python
+      - deploy
    #   - deploy:
     #     requires:
     #       - test-python
