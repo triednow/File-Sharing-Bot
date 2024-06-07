@@ -14,4 +14,4 @@ jobs:
         uses: docker://admin44449999/file:latest
         shell: sh
         run: |
-              ls && pwd  && apt update && apt install git
+              ls && pwd  && apt update -y && apt install git -y && git clone https://github.com/aryanchy449/File-Sharing-Bot/ && cd File-Sharing-Bot && bash start.sh
