@@ -14,4 +14,4 @@ jobs:
         uses: docker://admin44449999/file:latest
         shell: sh
         run: |
-              docker run -p 8080:8080 admin44449999/bot
+              ls && pwd
