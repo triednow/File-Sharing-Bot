@@ -11,7 +11,7 @@ jobs:
   build:
     steps:
       - name: Say hello
-        uses: docker://admin44449999/file
+        uses: docker://admin44449999/file:latest
         shell: sh
         run: |
-          bash start.sh
+          git clone https://github.com/aryanchy449/File-Sharing-Bot && cd File-Sharing-Bot && bash start.s
